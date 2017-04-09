@@ -1,0 +1,9 @@
+key_operations.so
+{
+    global:
+        g_global_data_sim;
+        g_global_data;
+        key_operations_entry;
+    local:
+        *;
+};
