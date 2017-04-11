@@ -14,5 +14,13 @@ enclave {
 
     trusted {
     	    public int ecall_key_operations_sample();
+    	    // private_key_operation: perform a private key operation
+			public kssl_error_code private_key_operation(pk_list list,         // Private key array from new_pk_list
+                                      int key_id,           // ID of key in pk_list from find_private_key
+                                      int opcode,           // Opcode from a KSSL message indicating the operation
+                                      int length,           // Length of data in message
+                                      BYTE *message,        // Bytes to perform operation on
+                                      BYTE *out,            // Buffer into which operation output is written
+                                      unsigned int *size); // Size of returned data written here
     };
 };
